@@ -14,6 +14,7 @@ public class BookServiceIml implements BookService {
 
     @Override
     public List<Book> gettAllBook() {
+        // lấy danh sách book
         return bookRepository.findAll() ;
     }
 
