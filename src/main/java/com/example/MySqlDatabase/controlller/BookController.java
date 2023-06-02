@@ -1,7 +1,10 @@
 package com.example.MySqlDatabase.controlller;
 
+import com.example.MySqlDatabase.config.dto.UserDto;
 import com.example.MySqlDatabase.model.Book;
+import com.example.MySqlDatabase.model.User;
 import com.example.MySqlDatabase.service.BookService;
+import com.example.MySqlDatabase.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,18 +19,14 @@ import java.util.List;
 public class BookController {
     @Autowired
     private BookService bookService;
+    @Autowired
+    private UserService userService;
 
 
-    @GetMapping("/")
-    public String listAll(Model model){
-        List<Book> listBook = bookService.gettAllBook();
-        model.addAttribute("listBook" , listBook);
-        return "index";
-    }
     @GetMapping("/new")
     public String newBook(Model model){
-        Book book = new Book();
-        model.addAttribute("newbook", book);
+     //   Book book = new Book();
+        model.addAttribute("newbook", new Book());
         return "newBook";
     }
     @PostMapping("/save")

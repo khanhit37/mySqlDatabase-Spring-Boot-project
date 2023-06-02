@@ -12,9 +12,9 @@ public class Book {
     //Mapping thông tin đến cột database
     @Column(name = "id")
     private int id;
-     @Column(name="title")
+    @Column(name = "title")
     private String title;
-     @Column(name = "author")
+    @Column(name = "author")
     private String author;
     @Column(name = "price")
     private float price;
